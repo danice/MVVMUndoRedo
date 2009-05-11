@@ -1,0 +1,38 @@
+﻿<Window x:Class="UndoRedoSample.DemoWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:undoredo="clr-namespace:MVVMUndoRedo;assembly=MVVMUndoRedo"
+    xmlns:local="clr-namespace:UndoRedoSample"
+    Title="Window1" Height="300" Width="600">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type undoredo:CommandModel}">
+            <Button Command="{Binding Command}" Content="{Binding Name}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VMPerson}">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5,0,0,0" Content="{Binding Name}"/>
+                <Label Margin="5,0,0,0" Content="{Binding Age}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel Orientation="Horizontal" undoredo:CreateCommandContext.Context="{Binding}">        
+        <StackPanel Orientation="Vertical">
+            <Label Content="Commands"/>
+            <!-- The commands template is set in Window.Resources -->
+            <ListBox ItemsSource="{Binding Commands}" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedPerson}">
+                <Label>Selected Person</Label>
+                <TextBox Margin="5,0,0,0" Width="150" Text="{Binding Name}"/>
+                <TextBox Margin="5,0,0,0" Width="40" Text="{Binding Age}"/>
+            </StackPanel>
+            <ListBox ItemsSource="{Binding PersonsList}" SelectedItem="{Binding SelectedPerson}"/>
+
+        <!-- This is the Insert Person dialog. It as is own viewmodel "InsertPersonView" -->
+            <local:InsertPersonView DataContext="{Binding InsertPersonDialog}"
+                                    undoredo:CreateCommandContext.Context="{Binding}"/>
+
+        </StackPanel>
+    </StackPanel>
+</Window>

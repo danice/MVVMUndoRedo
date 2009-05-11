@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMUndoRedo", "src\MVVMUndoRedo\MVVMUndoRedo.csproj", "{D3F4ABEE-B91E-42A6-962E-B99DC2C259AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoRedoSample", "samples\UndoRedoSample\UndoRedoSample.csproj", "{F7CF5A24-3D75-42B3-9EAB-95E023279190}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3F4ABEE-B91E-42A6-962E-B99DC2C259AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F4ABEE-B91E-42A6-962E-B99DC2C259AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F4ABEE-B91E-42A6-962E-B99DC2C259AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F4ABEE-B91E-42A6-962E-B99DC2C259AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CF5A24-3D75-42B3-9EAB-95E023279190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CF5A24-3D75-42B3-9EAB-95E023279190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CF5A24-3D75-42B3-9EAB-95E023279190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CF5A24-3D75-42B3-9EAB-95E023279190}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

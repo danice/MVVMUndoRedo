@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="UndoRedoSample.InsertPersonView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <Border Background="#B2D280" CornerRadius="5"                 
+                Visibility="{Binding Visible}">
+        <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+            <Button Command="ApplicationCommands.Close" HorizontalAlignment="Right">Close</Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">Name</Label>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+                <Label Grid.Row="1" Grid.Column="0">Age</Label>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Age}" />                
+            </Grid>
+            <Button Command="ApplicationCommands.New" Margin="5,5,0,0">New</Button>
+        </StackPanel>
+    </Border>
+    
+</UserControl>
